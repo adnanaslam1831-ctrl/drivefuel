@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-inter: 'Inter', sans-serif;
+  --font-jetbrains-mono: 'JetBrains Mono', monospace;
+  
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-slate-900 transition-colors duration-300;
+  font-family: var(--font-inter);
+}
+
+body.dark {
+  @apply bg-slate-900 text-slate-50;
+}
+
+/* Smooth scrolling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-100 dark:bg-slate-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 dark:bg-slate-600 rounded-full hover:bg-slate-400 dark:hover:bg-slate-500;
+}
+
+/* Focus styles */
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  @apply ring-2 ring-brand-500 ring-offset-2 dark:ring-offset-slate-900;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  @apply rounded-sm;
+}
+
+/* Selection */
+::selection {
+  @apply bg-brand-500 text-white;
+}
+
+/* Forms */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+textarea,
+select {
+  @apply bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-50 border border-slate-200 dark:border-slate-700 rounded-lg px-3 py-2 transition-colors;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  @apply border-brand-500 ring-1 ring-brand-500/20;
+}
+
+/* Animations */
+.animate-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Utility classes */
+.glass {
+  @apply bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-white/20 dark:border-slate-700/20;
+}
+
+.surface {
+  @apply bg-slate-50 dark:bg-slate-800;
+}
+
+.card {
+  @apply rounded-xl bg-white dark:bg-slate-800 shadow-md hover:shadow-lg transition-shadow;
+}
+
+.badge {
+  @apply inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium;
+}
+
+.badge-success {
+  @apply bg-fuel-100 dark:bg-fuel-900/30 text-fuel-700 dark:text-fuel-300;
+}
+
+.badge-warning {
+  @apply bg-alert-100 dark:bg-alert-900/30 text-alert-700 dark:text-alert-300;
+}
+
+.badge-info {
+  @apply bg-brand-100 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300;
+}
+
+/* Button base */
+.btn {
+  @apply inline-flex items-center justify-center rounded-lg font-medium transition-all duration-200 px-4 py-2.5 text-sm;
+}
+
+.btn:disabled {
+  @apply opacity-50 cursor-not-allowed;
+}
+
+.btn-primary {
+  @apply bg-brand-500 text-white hover:bg-brand-600 active:bg-brand-700;
+}
+
+.btn-secondary {
+  @apply bg-slate-100 dark:bg-slate-700 text-slate-900 dark:text-slate-50 hover:bg-slate-200 dark:hover:bg-slate-600;
+}
+
+.btn-success {
+  @apply bg-fuel-500 text-white hover:bg-fuel-600 active:bg-fuel-700;
+}
+
+.btn-danger {
+  @apply bg-alert-500 text-white hover:bg-alert-600 active:bg-alert-700;
+}
+
+.btn-sm {
+  @apply px-3 py-1.5 text-xs;
+}
+
+.btn-lg {
+  @apply px-6 py-3 text-base;
+}
+
+/* Input focus ring */
+.input-focus {
+  @apply focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500;
+}
+
+/* Metric display */
+.metric-value {
+  @apply text-3xl font-bold tracking-tight font-mono;
+}
+
+.metric-label {
+  @apply text-sm font-medium text-slate-600 dark:text-slate-400 uppercase tracking-wider;
+}
+
+/* Responsive grid */
+@media (max-width: 768px) {
+  .metric-value {
+    @apply text-2xl;
+  }
+}
