@@ -13,7 +13,6 @@ const vehiclesDatabase: any[] = []
 export async function GET(request: NextRequest) {
   try {
     const searchParams = request.nextUrl.searchParams
-    const period = searchParams.get('period') || 'monthly' // monthly, yearly
     const vehicleId = searchParams.get('vehicleId')
 
     // Filter trips
