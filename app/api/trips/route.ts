@@ -9,7 +9,7 @@ import { NextRequest, NextResponse } from 'next/server'
 // Replace with Prisma in production
 const tripsDatabase: any[] = []
 
-export async function POST(request: NextRequest) {
+export async function POST() {
   try {
     const body = await request.json()
 

@@ -8,7 +8,7 @@ import { NextRequest, NextResponse } from 'next/server'
 // In-memory database for demo
 const fuelLogsDatabase: any[] = []
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     const searchParams = request.nextUrl.searchParams
     const vehicleId = searchParams.get('vehicleId')
@@ -39,7 +39,7 @@ export async function GET(request: NextRequest) {
   }
 }
 
-export async function POST(request: NextRequest) {
+export async function POST() {
   try {
     const body = await request.json()
 

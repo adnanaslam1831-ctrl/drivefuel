@@ -8,7 +8,7 @@ import { NextRequest, NextResponse } from 'next/server'
 // In-memory database for demo
 const vehiclesDatabase: any[] = []
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     return NextResponse.json({
       success: true,
@@ -24,7 +24,7 @@ export async function GET(request: NextRequest) {
   }
 }
 
-export async function POST(request: NextRequest) {
+export async function POST() {
   try {
     const body = await request.json()
 

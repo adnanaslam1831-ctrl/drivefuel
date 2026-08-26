@@ -10,7 +10,7 @@ const tripsDatabase: any[] = []
 const fuelLogsDatabase: any[] = []
 const vehiclesDatabase: any[] = []
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     const searchParams = request.nextUrl.searchParams
     const vehicleId = searchParams.get('vehicleId')
