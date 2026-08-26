@@ -84,7 +84,7 @@ export async function POST(request: NextRequest) {
   }
 }
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     // In production, filter by userId from session
     return NextResponse.json({
