@@ -47,7 +47,7 @@ function SimpleChart({ data, title }: { data: any[]; title: string }) {
 }
 
 export default function AdminDashboard() {
-  const [stats, setStats] = useState({
+  const stats = {
     totalUsers: 1250,
     activeUsers: 324,
     totalTrips: 45820,
@@ -56,7 +56,7 @@ export default function AdminDashboard() {
     freeUsers: 890,
     proUsers: 310,
     businessUsers: 50,
-  })
+  }
 
   const [loading, setLoading] = useState(false)
 
