@@ -47,7 +47,6 @@ function SimpleChart({ data, title }: { data: any[]; title: string }) {
 }
 
 export default function AdminDashboard() {
-  const router = useRouter()
   const [stats, setStats] = useState({
     totalUsers: 1250,
     activeUsers: 324,
